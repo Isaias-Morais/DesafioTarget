@@ -1,7 +1,7 @@
 import json
 
 #organiza vendas por vendendor
-with open('vendas.json','r', encoding='utf-8') as vendas:
+with open('vendas.json', 'r', encoding='utf-8') as vendas:
     json_vendas = json.load(vendas)
     vendedores = {}
 
