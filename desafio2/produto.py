@@ -23,7 +23,7 @@ class Produto :
         for item in Produto.produto:
             if item.codigo_produto == codigo:
                 item.quantidade_estoque += quantidade
-                Produto.movimentacao.append(f'Protocolo-{Produto.protocolo} {item.descricao} teve uma entrada de {quantidade}')
+                Produto.movimentacao.append(f'Protocolo-{Produto.protocolo} {item.descricao} teve uma entrada de {quantidade} total final de {item.quantidade_estoque}')
                 Produto.protocolo +=1
         return 'Produto nao encontrado na lista '
 
@@ -32,7 +32,7 @@ class Produto :
             if item.codigo_produto == codigo:
                 if item.quantidade_estoque >= quantidade:
                     item.quantidade_estoque -= quantidade
-                    Produto.movimentacao.append(f'Protocolo-{Produto.protocolo} {item.descricao} teve uma saida de {quantidade}')
+                    Produto.movimentacao.append(f'Protocolo-{Produto.protocolo} {item.descricao} teve uma saida de {quantidade} total final de {item.quantidade_estoque}')
                     Produto.protocolo += 1
                 else:
                     print("quantidade invalida")
